@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+      table, th, td {
+          border: 1px solid #aa3b2e;
+          border-collapse: collapse;
+      }
+      th, td {
+          padding: 5px;
+      }
+  </style>
+</head>
+<body>
+
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+
+    <% ['ismail','Listens to God','19'] .each do |elem| %>
+    <td><%= elem %></td>
+        <% end %>
+  </tr>
+  <tr>
+    <% ['sanaa','fatso' , '15'] .each do |elem| %>
+        <td><%= elem %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <% ['Suha','star' , '8'] .each do |elem| %>
+        <td><%= elem %></td>
+    <% end %>
+  </tr>
+</table>
+<%= puts"Hello world " %>
+</body>
+</html>
