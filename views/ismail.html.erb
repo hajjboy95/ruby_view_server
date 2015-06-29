@@ -22,8 +22,8 @@
   <tr>
 
     <% ['ismail','Listens to God','19'] .each do |elem| %>
-    <td><%= elem %></td>
-        <% end %>
+        <td><%= elem %></td>
+    <% end %>
   </tr>
   <tr>
     <% ['sanaa','fatso' , '15'] .each do |elem| %>
@@ -36,6 +36,14 @@
     <% end %>
   </tr>
 </table>
-<%= puts"Hello world " %>
+<ul>
+  <% ['ismail','Listens to God','19' , 'Inshallah'] .each do |elem| %>
+      <li>
+        <%= elem %>
+      </li>
+  <% end %>
+</ul>
+
+
 </body>
 </html>
