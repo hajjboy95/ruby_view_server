@@ -6,23 +6,51 @@
 
 
 <html>
-  <body>
-    <h1>You're using a layout</h1>
-    <p>
-      <h3> I'm a header</h3>
-      <p>Put things in the header</p>
+<body>
+<h1>You're using a layout</h1>
+<p>
+<h3> I'm a header</h3>
+<p>Put things in the header</p>
 
-    <%= link_to("YOU are needed to join the ghd crew" , "http://google.com") %>
+<%= link_to("YOU are needed to join the ghd crew" , "http://google.com") %>
 
-    </p>
-    <hr />
-    <div>
-      <%= yield %>
-    </div>
-    <hr />
-    <div>
-      <h3> I'm a footer</h3>
-      <p>Put things in the footer</p>
-    </div>
-  </body>
+
+<form method='post' action="<%= @request.path %>"  >
+  First name : <input type="text" name='first_name' placeholder="first name"> <br>
+  Last name  : <input type="text" name="surname" placeholder="surname"> <br>
+  password   : <input type="password" name="password" placeholder="password"> <br><br>
+  <input type="radio" name="sex" value="male" checked> Male <br>
+  <input type="radio" name="sex" value="female" >Female <br>
+
+  <input type="submit" value="Submit">
+         
+</form>
+
+
+<% if @request.query['first_name'] && !@request.query['first_name'].empty? && @request.query['surname'] && !@request.query['surname'].empty? && @request.query['password'] && !@request.query['password'].empty?  %>
+
+    Hello there <%= @request.query['first_name'] + @request.query['surname'] %> <br>
+    Your Password is <%= @request.query['password'].length %> long <br>
+    sex = <%=@request.query['sex'] %> <br>
+
+<%else %>
+    Enter the name
+<% end %>
+
+
+
+
+</p>
+
+
+<hr />
+<div>
+  <%= yield %>
+</div>
+<hr />
+<div>
+  <h3> I'm a footer</h3>
+  <p>Put things in the footer</p>
+</div>
+</body>
 </html>
