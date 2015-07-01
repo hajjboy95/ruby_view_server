@@ -12,3 +12,7 @@ trap 'INT' do server.shutdown end
 
 ## Start the server
 server.start
+
+server.mount_proc '/' do |req, res|
+  res.body = 'Hello, world!'
+end
